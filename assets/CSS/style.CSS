@@ -1,0 +1,50 @@
+.codeHead {
+    text-align: center !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    margin: 20px !important;
+    padding: 20px;
+}
+hr {
+    margin-bottom: 50px !important;
+}
+#start-btn {
+    text-align: center !important;
+}
+.btn {
+    background-color: blueviolet !important;
+}
+.track {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.highscores {
+    text-align: left;
+    display: inline-flex;
+    width: 1700px;
+    padding:10px;
+    margin:2px;
+   
+
+}
+.timeq {
+    text-align: right;
+    display: inline-flex;
+    width: 30px;
+    margin:2px;
+    padding:10px;
+}
+
+.container {
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+    background-color: white;
+}
+body {
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
