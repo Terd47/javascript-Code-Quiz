@@ -12,19 +12,17 @@ hr {
 }
 .btn {
     background-color: blueviolet !important;
-}
-.track {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
+    padding:15px;
+    font-size: 20px !important;
+    font-weight: 100 !important;
+    color: black !important;
 }
 .highscores {
     text-align: left;
     display: inline-flex;
-    width: 1700px;
+    width: 900px;
     padding:10px;
     margin:2px;
-   
-
 }
 .timeq {
     text-align: right;
@@ -38,11 +36,28 @@ hr {
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px 2px;
-    background-color: white;
+    background-color: rgb(177, 222, 243);
+    margin: 220px;
+    height: 500px;
 }
 body {
     justify-content: center;
     align-items: center;
+    background-color: rgb(116, 133, 190);
+}
+.landingPage {
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(116, 133, 190);
+}
+h1 h2 p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+ul {
+    margin:30px;
+    padding:10px;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 

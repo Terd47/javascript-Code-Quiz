@@ -1,6 +1,6 @@
 (function() 
  {
-  var allQuestions = [{
+  let codeQuestions = [{
     question: "commonly used data types Do Not include?",
     options: ["Strings","Booleans","Alerts","Numbers"],
     answer: 2
@@ -24,18 +24,18 @@
     answer: 3
   },];
   
-  var quesCounter = 0;
-  var selectOptions = [];
-  var quizSpace = $('#quiz');
+  let quesCounter = 0;
+  let selectOptions = [];
+  let quizSpace = $('#quiz');
     
   nextQuestion();
     
-  $('#next').click(function () 
+  $('#next').click(function() 
     {
         chooseOption();
         if (isNaN(selectOptions[quesCounter])) 
         {
-            alert('Please select an option !');
+            alert('Please choose an answer !');
         } 
         else 
         {
@@ -54,10 +54,10 @@
   function createElement(index) 
     {
         var element = $('<div>',{id: 'question'});
-        var header = $('<h2>Question No. ' + (index + 1) + ' :</h2>');
+        var header = $('<h1>Question No. ' + (index + 1) + ' :</h1>');
         element.append(header);
 
-        var question = $('<p>').append(allQuestions[index].question);
+        var question = $('<h2></>').append(codeQuestions[index].question);
         element.append(question);
 
         var radio = radioButtons(index);
@@ -71,10 +71,10 @@
         var radioItems = $('<ul>');
         var item;
         var input = '';
-        for (var i = 0; i < allQuestions[index].options.length; i++) {
+        for (var i = 0; i < codeQuestions[index].options.length; i++) {
           item = $('<li>');
           input = '<input type="radio" name="answer" value=' + i + ' />';
-          input += allQuestions[index].options[i];
+          input += codeQuestions[index].options[i];
           item.append(input);
           radioItems.append(item);
         }
@@ -91,7 +91,7 @@
         quizSpace.fadeOut(function() 
             {
               $('#question').remove();
-              if(quesCounter < allQuestions.length)
+              if(quesCounter < codeQuestions.length)
                 {
                     var nextQuestion = createElement(quesCounter);
                     quizSpace.append(nextQuestion).fadeIn();
@@ -125,12 +125,12 @@
         var correct = 0;
         for (var i = 0; i < selectOptions.length; i++) 
         {
-          if (selectOptions[i] === allQuestions[i].answer) 
+          if (selectOptions[i] === codeQuestions[i].answer) 
           {
             correct++;
           }
         }
-        score.append('You scored ' + correct + ' out of ' +allQuestions.length);
+        score.append('You scored ' + correct + ' out of ' +codeQuestions.length);
         return score;
   }
 })();
