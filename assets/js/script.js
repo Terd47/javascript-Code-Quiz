@@ -1,4 +1,4 @@
-(function() 
+(function()
  {
   let codeQuestions = [{
     question: "commonly used data types Do Not include?",
@@ -118,11 +118,82 @@
                 }
         });
     }
+    // timer count down
+    let time =100
+   // setInterval(function(){ time--;  console.log("This is our time varibale ", time) }, 1000);
+    //document.getElementById('quizTimer').innerHTML = time;
+    
+    var correct = 0;
+
+    
+   
   
+  function finalScore(correct){
+    const scoreTemplate = `<div id=“scorePage”> 
+                             <div id="scores"><p><h2> 
+                             You scored ${correct } out of ${codeQuestions.length}</h2></p>
+                             
+                             </div>
+                             <div id=“userInput”>
+                             <input type="text" id="userInitials">
+                             <button type="submit" id="saveInitials" >Submit</button>
+                             </di>
+                             <div id=“scoreBoard”>
+                               <ul id=“scoreList”></ul>
+                              </div>
+                            </div>`;
+    const scoreLi = $('<li>');
+    document.getElementById('scoreBoardContainer').innerHTML = scoreTemplate;
+    
+    
+   $('#saveInitials').on('click', function(event){
+    event.preventDefault();
+    var getInitial = $('#userInitials').val();
+    console.log(getInitial);
+    if(getInitial !== ""){
+      saveScore(getInitial,correct);
+      console.log("insideEventListener");
+      displayResult();
+    }
+   });
+  }
+
+  function saveScore(name,score){
+    console.log(name + " " + score);
+    //get localStorage
+    let localStorage = window.localStorage;
+  
+    if(localStorage.getItem("score") != null){
+        let tempObject = JSON.parse(localStorage.getItem("score"));
+        tempObject.push({name, score});
+        localStorage.setItem("score",JSON.stringify(tempObject));
+    } else {
+        let tempObject = [{name, score}];
+        localStorage.setItem("score", JSON.stringify(tempObject));
+    }
+    displayScoreBoard();
+  }
+ 
+  function displayScoreBoard(){
+    let localStorage = window.localStorage;
+    
+    if(localStorage.getItem("score") != null){
+        let tempObject = JSON.parse(localStorage.getItem("score"));
+         //$('<li>')}
+         console.log(tempObject);
+         var li = "";
+         for (var i = 0; i < tempObject.length; i++)
+         {
+          var newTmp = `<li><span>${tempObject[i].name}</span><span>${tempObject[i].score}</span></li>`;
+          li += newTmp;
+         }
+         document.getElementById('scoreList').innerHTML = li;
+  }}
+  
+ 
   function displayResult() 
     {
         var score = $('<p>',{id: 'question'});
-        var correct = 0;
         for (var i = 0; i < selectOptions.length; i++) 
         {
           if (selectOptions[i] === codeQuestions[i].answer) 
@@ -131,6 +202,9 @@
           }
         }
         score.append('You scored ' + correct + ' out of ' +codeQuestions.length);
+       finalScore(correct);
+       displayScoreBoard();
         return score;
   }
+  
 })();
