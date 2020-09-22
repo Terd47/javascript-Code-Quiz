@@ -6,17 +6,22 @@
     <link rel="stylesheet" href="./assets/CSS/style.CSS">
 </head>
 <body>
-    <div class="timeq">
-        <p><strong>Time:<span class="quizTimer">0</span></strong></p>
+    <div class="container-md">
+        <div id = "quizinfo">
+            <p><strong>View Highscores:<span id="highscores"></span></strong></p>
+              <p><strong>Time:<span class="quizTimer"></span></strong></p>
+            </p>
+        </div>
+        <div id="scoreBoardContainer" >
+            <div id="quiz">
+            </div>
+            <div class="button" id="next"><a href="#">Next</a></div>
+            <div class="button" id="prev"><a href="#">Prev</a></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+        <script src="assets/js/script.js"></script>
     </div>
-    <div class="container" id="scoreBoardContainer" >
-       <div id="quiz">
-       </div>
-       <div class="button btn btn-outline-primary" id="next"><a href="#">Next</a></div>
-       <div class="button  btn btn-outline-primary" id="prev"><a href="#">Prev</a></div>
-        
-    </div>
-    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    
 </body>
 </html>

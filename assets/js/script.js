@@ -35,7 +35,7 @@
         chooseOption();
         if (isNaN(selectOptions[quesCounter])) 
         {
-            alert('Please choose an answer !');
+            alert('Sorry, Please choose an answer to move to the next question!');
         } 
         else 
         {
@@ -121,9 +121,10 @@
     }
     var timeQuiz;
    function SetTimer(){
-    let time =2
+    let time;
      timeQuiz = setInterval(function(){
        time--;
+      
        document.getElementsByClassName('quizTimer').innerHTML = time;
        if(time === 0){
          clearInterval(timeQuiz);
@@ -132,7 +133,7 @@
          
        }
       }, 1000);
-     
+      $('.quizTimer').text(timeQuiz);
      
 
    }

@@ -10,40 +10,64 @@ hr {
 #start-btn {
     text-align: center !important;
 }
-.btn {
-    background-color: blueviolet !important;
-    padding:15px;
+#next{
+    background-color: rgb(36, 163, 202) !important;
+    color: black !important;
+    width: 60px;
+    margin: auto;
+    font-size: 25px !important;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: inline-block;
+}
+#prev{
+    background-color: rgb(36, 163, 202) !important;
+    color: black !important;
+    width: 60px;
+    font-size: 25px !important;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: inline-block !important;
+    margin:auto;
+}
+
+
+.button {
+    background-color: rgb(6, 119, 128) !important;
+    padding:10px;
+    margin: 11px !important;
     font-size: 20px !important;
     font-weight: 100 !important;
     color: black !important;
 }
 .highscores {
     text-align: left;
-    display: inline-flex;
-    width: 900px;
+    width:100px;
     padding:10px;
     margin:2px;
+    display: inline-block !important;
 }
 .timeq {
     text-align: right;
-    display: inline-flex;
+    display: inline-block !important;
     width: 30px;
     margin:2px;
     padding:10px;
 }
 
-.container {
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 0 10px 2px;
-    background-color: rgb(177, 222, 243);
-    margin: 220px;
-    height: 500px;
-}
+/* .container-md{
+    max-width: 900px;
+    background-color: rgb(36, 163, 202);
+    border-radius: 25px;
+    padding:20px;
+    margin: auto;
+   
+    border:3px solid rgb(22, 145, 161);
+    box-shadow: rgb(22, 145, 161);
+
+} */
 body {
     justify-content: center;
     align-items: center;
-    background-color: rgb(116, 133, 190);
+    background-color: rgb(116, 133, 190) !important;
 }
 .landingPage {
     justify-content: center;
@@ -64,9 +88,19 @@ ul {
     text-align: center;
     
 }
-li:hover {
+/* li:hover {
     color: green;
     font-size: 1.5em;
+} */
+#scoreBoardContainer {
+    max-width: 900px;
+    background-color: rgb(36, 163, 202);
+    border-radius: 25px;
+    padding:20px;
+    margin: auto;
+    border:3px solid rgb(22, 145, 161);
+    box-shadow: rgb(22, 145, 161);
+
 }
 
 
