@@ -121,7 +121,7 @@
     }
     var timeQuiz;
    function SetTimer(){
-    let time;
+    let time = "";
      timeQuiz = setInterval(function(){
        time--;
       
@@ -208,8 +208,7 @@
          }
          document.getElementById('scoreList').innerHTML = li;
   }}
-  
- 
+
   function displayResult() 
     {
         var score = $('<p>',{id: 'question'});

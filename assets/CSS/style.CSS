@@ -7,10 +7,20 @@
 hr {
     margin-bottom: 50px !important;
 }
-#start-btn {
-    text-align: center !important;
+.btn {
+    background-color: rgb(36, 163, 202) !important;
+    color: black !important;
+    width: 80px;
+    margin: auto;
+    font-size: 20px !important;
+    box-shadow: 0 8px 16px 0 rgba(8, 6, 6, 0.2), 0 6px 20px 0 rgba(12, 2, 2, 0.19) !important;
+    
 }
-#next{
+#start-btn {
+    text-align: center;
+    font-weight: 3em;
+}
+.button {
     background-color: rgb(36, 163, 202) !important;
     color: black !important;
     width: 60px;
@@ -19,19 +29,11 @@ hr {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     display: inline-block;
 }
-#prev{
-    background-color: rgb(36, 163, 202) !important;
+#buttons {
     color: black !important;
-    width: 60px;
-    font-size: 25px !important;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    display: inline-block !important;
-    margin:auto;
 }
 
-
 .button {
-    background-color: rgb(6, 119, 128) !important;
     padding:10px;
     margin: 11px !important;
     font-size: 20px !important;
@@ -53,7 +55,7 @@ hr {
     padding:10px;
 }
 
-/* .container-md{
+.container-md{
     max-width: 900px;
     background-color: rgb(36, 163, 202);
     border-radius: 25px;
@@ -63,7 +65,7 @@ hr {
     border:3px solid rgb(22, 145, 161);
     box-shadow: rgb(22, 145, 161);
 
-} */
+}
 body {
     justify-content: center;
     align-items: center;
