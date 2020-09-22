@@ -59,6 +59,15 @@ ul {
     font-size: 30px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.styleLi {
+    margin-left: 3em;
+    text-align: center;
+    
+}
+li:hover {
+    color: green;
+    font-size: 1.5em;
+}
 
 
 

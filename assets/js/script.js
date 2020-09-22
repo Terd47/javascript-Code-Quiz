@@ -22,7 +22,7 @@
                for printing content to the debugger is:?",
     options: ["JavaScript","terminal/bash","for loops","console.log"],
     answer: 3
-  },];
+  }];
   
   let quesCounter = 0;
   let selectOptions = [];
@@ -115,13 +115,29 @@
                     quizSpace.append(scoreRslt).fadeIn();
                     $('#next').hide();
                     $('#prev').hide();
+                    clearInterval(timeQuiz);
                 }
         });
     }
-    // timer count down
-    let time =100
-   // setInterval(function(){ time--;  console.log("This is our time varibale ", time) }, 1000);
-    //document.getElementById('quizTimer').innerHTML = time;
+    var timeQuiz;
+   function SetTimer(){
+    let time =2
+     timeQuiz = setInterval(function(){
+       time--;
+       document.getElementsByClassName('quizTimer').innerHTML = time;
+       if(time === 0){
+         clearInterval(timeQuiz);
+         alert("Sorry you ran out of time. Please refresh page and start quiz");
+        
+         
+       }
+      }, 1000);
+     
+     
+
+   }
+   SetTimer();
+  
     
     var correct = 0;
 
@@ -129,17 +145,18 @@
    
   
   function finalScore(correct){
-    const scoreTemplate = `<div id=“scorePage”> 
+    const scoreTemplate = `<div id=scorePage> 
                              <div id="scores"><p><h2> 
                              You scored ${correct } out of ${codeQuestions.length}</h2></p>
                              
                              </div>
-                             <div id=“userInput”>
+                             <div id=userInput>
                              <input type="text" id="userInitials">
                              <button type="submit" id="saveInitials" >Submit</button>
                              </di>
-                             <div id=“scoreBoard”>
-                               <ul id=“scoreList”></ul>
+                             <div id=scoreBoard>
+                               <ul id=scoreList>
+                               </ul>
                               </div>
                             </div>`;
     const scoreLi = $('<li>');
@@ -181,10 +198,11 @@
         let tempObject = JSON.parse(localStorage.getItem("score"));
          //$('<li>')}
          console.log(tempObject);
-         var li = "";
+         var li = `<li><span class=styleLi>name</span> <span class=styleLi>score</span></li>`;
+         
          for (var i = 0; i < tempObject.length; i++)
          {
-          var newTmp = `<li><span>${tempObject[i].name}</span><span>${tempObject[i].score}</span></li>`;
+          var newTmp = `<li><span class="styleLi">${tempObject[i].name}</span><span class="styleLi">: ${tempObject[i].score}</span></li>`;
           li += newTmp;
          }
          document.getElementById('scoreList').innerHTML = li;
