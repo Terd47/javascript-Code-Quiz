@@ -1,4 +1,5 @@
 (function()
+// all quiz questions and the correct answers
  {
   let codeQuestions = [{
     question: "commonly used data types Do Not include?",
@@ -24,10 +25,15 @@
     answer: 3
   }];
   
+  // variables for question carousel
   let quesCounter = 0;
   let selectOptions = [];
   let quizSpace = $('#quiz');
-    
+
+
+  // function to loop through questions array ass the user selects the options
+  
+  //Next question function
   nextQuestion();
     
   $('#next').click(function() 
@@ -44,6 +50,8 @@
         }
     });
   
+    // previous question function
+
   $('#prev').click(function () 
     {
         chooseOption();
@@ -51,6 +59,8 @@
         nextQuestion();
     });
   
+
+    // create new html elements to display questions 
   function createElement(index) 
     {
         var element = $('<div>',{id: 'question'});
@@ -66,6 +76,7 @@
         return element;
     }
   
+    // radio buttons to display options to questions in a list format and collect user input
   function radioButtons(index) 
     {
         var radioItems = $('<ul>');
@@ -81,11 +92,13 @@
         return radioItems;
   }
   
+  // collect user selection
   function chooseOption() 
     {
         selectOptions[quesCounter] = +$('input[name="answer"]:checked').val();
     }
    
+    // move to next question and display previous button
   function nextQuestion() 
     {
         quizSpace.fadeOut(function() 
@@ -119,6 +132,8 @@
                 }
         });
     }
+
+    /// track time when quiz starts
     var timeQuiz;
    function SetTimer(){
     let time = "";
@@ -143,7 +158,7 @@
     var correct = 0;
 
     
-   
+// get finalscore and create new elements to display at end of quiz
   
   function finalScore(correct){
     const scoreTemplate = `<div id=scorePage> 
@@ -153,7 +168,7 @@
                              </div>
                              <div id=userInput>
                              <input type="text" id="userInitials">
-                             <button type="submit" id="saveInitials" >Submit</button>
+                             <button type="submit" id="saveInitials" >Save</button>
                              </di>
                              <div id=scoreBoard>
                                <ul id=scoreList>
@@ -163,8 +178,8 @@
     const scoreLi = $('<li>');
     document.getElementById('scoreBoardContainer').innerHTML = scoreTemplate;
     
-    
-   $('#saveInitials').on('click', function(event){
+    // get user initials and save score
+    $('#saveInitials').on('click', function(event){
     event.preventDefault();
     var getInitial = $('#userInitials').val();
     console.log(getInitial);
@@ -176,6 +191,7 @@
    });
   }
 
+  // save user score to local storage
   function saveScore(name,score){
     console.log(name + " " + score);
     //get localStorage
@@ -192,6 +208,7 @@
     displayScoreBoard();
   }
  
+  // get user score from local storage and display 
   function displayScoreBoard(){
     let localStorage = window.localStorage;
     
@@ -209,7 +226,8 @@
          document.getElementById('scoreList').innerHTML = li;
   }}
 
-  function displayResult() 
+  //display user results 
+ function displayResult() 
     {
         var score = $('<p>',{id: 'question'});
         for (var i = 0; i < selectOptions.length; i++) 
